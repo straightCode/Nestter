@@ -61,6 +61,17 @@ body {
   justify-content: space-between;
   align-items: center; }
 
+.new-tweet-constructor__footer__features {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-tweet-constructor__footer__features__item {
+  flex: 1 1 25%;
+}
+
 .new-tweet-constructor__footer__features__item img {
   width: 25px; }
 
@@ -670,7 +681,7 @@ textarea {
   top: 20px;
   left: 20px;
   z-index: 20;
-  background: url("../img/right-sidebar/search-icon.svg") center no-repeat;
+  background: url("../img/search-icon.svg") center no-repeat;
   opacity: .5; }
 
 /* ============================================ */
