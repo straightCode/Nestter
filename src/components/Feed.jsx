@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TweetForm from './TweetForm.jsx';
-import ShiningImg from '../img/shining.svg';
 import Tweet from "./Tweet.jsx";
+import ShiningImg from '../img/shining.svg';
 
 
 class Feed extends Component{
