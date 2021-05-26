@@ -1,24 +1,23 @@
 import React, { Component } from "react";
-import moreImg from '../img/more.svg';
-import starshipImg from '../img/starship.png';
-import elonImg from '../img/elon.jpg';
-import commentImg from '../img/comment.svg';
-import retweetImg from '../img/retweet.svg';
-import heartImg from '../img/heart.svg';
-import uploadImg from '../img/upload.svg';
+import {moreImg, commentImg, retweetImg, heartImg, uploadImg} from '../img';
+import dayjs from "dayjs";
 
-class Tweet extends Component {
-  render(){
-    return <div className="main-content__item post">
-        <div className="post__avatar"><img src={starshipImg} alt=""/></div>
+const Tweet = (props) => {
+  const {user = {}, content = {}, createdAt, _id, } = props;
+  return (
+    <div className="main-content__item post">
+        <div className="post__avatar">
+          <img src={user.avatarUrl} alt="User Avatar"/>
+        </div>
         <div className="post__header">
-          <a className="post__author-name">Elon Musk</a>
-          <a className="post__author-login">@elonmusk</a>
-          <a className="post__timer">31m</a>
+          <a className="post__author-name">{user.firstName} {user.lastName}</a>
+          <a className="post__author-login">@{user._nickname}</a>
+          <a className="post__timer">{dayjs(createdAt).fromNow()}</a>
           <a className="post__more-btn"><img src={moreImg} alt=""/></a>
         </div>
-        <div className="post__text">guest starting ...</div>
-        <div className="post__photo"><img src={elonImg} alt=""/></div>
+        <div className="post__text">{content.text}</div>
+        {Math.random() > .5 ? <div className="post__photo"><img src={content.photo} alt=""/></div> : ''}
+        
         <div className="post__footer">
           <a href="" className="post__footer__item post__footer__item__reply">
             <div className="post__footer__item__img"><img src={commentImg} alt=""/></div>
@@ -37,7 +36,7 @@ class Tweet extends Component {
           </a>
         </div>
       </div>
-  }
+  )
 }
 
 export default Tweet;

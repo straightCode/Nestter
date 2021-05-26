@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import TweetForm from './TweetForm.jsx';
 import Tweet from "./Tweet.jsx";
-import ShiningImg from '../img/shining.svg';
+import {ShiningImg} from '../img';
 
 
 class Feed extends Component{
+  constructor(props){
+    super(props);
+  }
   render(){
     return<div className="main-content nes-container is-rounded">
       <div className="main-content__header">
@@ -13,12 +16,8 @@ class Feed extends Component{
             <img src={ShiningImg} alt=""/>
           </a>
       </div>
-
-      <TweetForm />     
-      <Tweet />
-      <Tweet />
-      <Tweet />
-
+      <TweetForm />
+        {this.props.tweets.map(e => <Tweet key={e._id} {...e}/>)}
     </div>
   }
 }

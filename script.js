@@ -4,6 +4,10 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import './src/css/style.css';
 
+import dayjs from "dayjs";
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
+
 ReactDOM.render(
   React.createElement(App, null),
   document.getElementById('app')

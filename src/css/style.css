@@ -98,21 +98,23 @@ body {
 
 .post__header {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;}
 
 .post__author-name {
-  font-size: 14px;
+  font-size: 10px;
   margin-right: 10px; }
 
 .post__author-login {
   color: #9b9b9b !important;
-  font-size: 12px;
+  font-size: 8px;
   margin-right: 14px; }
 
 .post__timer {
   position: relative;
   color: #9b9b9b !important;
-  font-size: 12px; }
+  font-size: 8px; }
 
 .post__timer:before {
   content: '';
