@@ -1,29 +1,44 @@
 import React, { Component } from "react";
-import SidebarLeft from "./src/components/SidebarLeft.jsx";
-import Feed from './src/components/Feed.jsx';
-import SidebarRight from "./src/components/SidebarRight.jsx";
-import {tweets, trends, recomendations} from './src/mocks';
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Example } from "./src/components";
+import store from './src/redux-store/store';
+import {
+  Home,
+  Profile,
+  LoginContainer,
+  SignUpContainer,
+} from "./src/containers";
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      tweets: [],
-    }
-  }
-  comonentDidMount(){
-    this.setState({
-      tweets,
-      trends,
-      recomendations,
-    })
-  }
   render() {
-    return <div className="wrapper">
-      <SidebarLeft />
-      <Feed tweets={tweets}/>
-      <SidebarRight trends={trends} recomendations={recomendations}/>
-    </div>
+    return (
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route path='/' exact>
+              <Home />
+            </Route>
+
+            <Route path='/profile'>
+              <Profile />
+            </Route>
+
+            <Route path='/login'>
+              <LoginContainer />
+            </Route>
+
+            <Route path='/signin'>
+              <SignUpContainer />
+            </Route>
+
+            <Route path='/example'>
+              <Example />
+            </Route>
+          </Switch>
+        </Router>
+      </Provider>
+    );
   }
 }
 

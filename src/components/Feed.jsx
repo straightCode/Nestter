@@ -16,8 +16,13 @@ class Feed extends Component{
             <img src={ShiningImg} alt=""/>
           </a>
       </div>
+      
       <TweetForm />
-        {this.props.tweets.map(e => <Tweet key={e._id} {...e}/>)}
+
+      {this.props.tweets.map(e => <Tweet key={e._id} {...e} 
+        onReply={this.props.onReply}
+        onRetweet={this.props.onRetweet}
+        onLicke={this.props.onLicke} />)}
     </div>
   }
 }

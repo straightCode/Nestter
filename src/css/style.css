@@ -102,29 +102,38 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;}
 
+.post__author {
+  margin-right: 18px;
+}
+
+.post__author a{
+  display: block;
+}
+
 .post__author-name {
-  font-size: 10px;
-  margin-right: 10px; }
+  font-size: 12px;
+  margin-bottom: 5px; }
 
 .post__author-login {
   color: #9b9b9b !important;
-  font-size: 8px;
-  margin-right: 14px; }
+  font-size: 10px;
+}
 
 .post__timer {
+  align-self: flex-start;
   position: relative;
   color: #9b9b9b !important;
-  font-size: 8px; }
+  font-size: 10px; }
 
 .post__timer:before {
   content: '';
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width: 5px;
+  height: 5px;
   background-color: #9b9b9b;
   border-radius: 50%;
-  left: -8px;
-  top: 5px; }
+  left: -12px;
+  top: 2px; }
 
 .post__more-btn {
   justify-self: end;
@@ -154,9 +163,13 @@ body {
   justify-content: space-between; }
 
 .post__footer__item {
+  display: flex;
+  align-items: center;
   flex: 0 0 25%; }
 
 .post__footer__item__img {
+  margin-top: -4px;
+  margin-right: 5px;
   display: inline-block; }
 
 .post__footer__item__img img {
@@ -164,6 +177,7 @@ body {
 
 .post__footer__item__counter {
   color: black;
+  line-height: 0;
   font-size: 10px; }
 
 .post__footer__item__share img {
@@ -609,19 +623,22 @@ textarea {
   flex: 0 0 40px;
   border-radius: 50%;
   margin-right: 20px;
-  margin-left: 0px;
   background-color: #d8d8d8; }
 
 .account-menu__login {
   color: gray; }
 
-.account-menu__more-btn {
+.account-menu__more-btn,
+.account-menu__more-btn-big {
   flex: 0 0 20px;
   margin-left: auto;
   margin-right: 10px; }
 
 .account-menu__more-btn img {
   width: 20px; }
+
+.account-menu__more-btn-big img {
+  width: 35px; }
 
 .account-menu__popup {
   display: none;
@@ -695,7 +712,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 10px 0;
   border-bottom: 2px solid #7D8E9D; }
 
 .trends__header__title {
@@ -703,7 +720,7 @@ textarea {
   font-weight: 700; }
 
 .trends__header__settings-btn img {
-  width: 25px; }
+  width: 35px; }
 
 .trends__item {
   position: relative;
